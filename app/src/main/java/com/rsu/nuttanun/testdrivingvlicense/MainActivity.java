@@ -1,5 +1,6 @@
 package com.rsu.nuttanun.testdrivingvlicense;
 
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 truePasswordString, loginNameString, loginAgeString, loginIDString;
         private static final String urlJSON = "http://swiftcodingthai.com/toey/get_user_toey.php";
         private boolean statusABoolean = true;
-        private String[] loginStirng;
+        private String[] loginStrings;
 
         public SynUser(Context context, String myPasswordString, String myUserString) {
             this.context = context;
@@ -114,6 +115,21 @@ public class MainActivity extends AppCompatActivity {
                     //password true
                     Toast.makeText(context, "ยินดีต้อนรับ " + loginNameString,
                             Toast.LENGTH_LONG).show();
+
+
+                    // Intent to service
+
+                    loginStrings = new String[3];
+                    loginStrings[0] = loginIDString;
+                    loginStrings[1] = loginNameString;
+                    loginStrings[2] = loginAgeString;
+
+                    Intent intent = new Intent(MainActivity.this, ServiceActivity.class);
+                    intent.putExtra("login", loginStrings);
+                    startActivity(intent);
+                    finish();
+
+
 
                 } else {
                     //password fail
