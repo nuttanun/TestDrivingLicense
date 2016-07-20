@@ -25,7 +25,8 @@
         android:layout_height="wrap_content"
         android:text="@string/signup"
         android:id="@+id/button3"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:onClick="clickSignUpSign" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -49,7 +50,7 @@
                 android:text="Name"
                 android:id="@+id/textView2"
                 android:textSize="@dimen/h2"
-                android:layout_weight="2"
+                android:layout_weight="1.5"
                 android:textColor="@color/text" />
 
             <EditText
@@ -57,7 +58,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editText"
                 android:layout_weight="1"
-                android:textColor="@color/text" />
+                android:textColor="@color/text"
+                android:inputType="text" />
         </LinearLayout>
 
         <LinearLayout
@@ -71,7 +73,7 @@
                 android:text="Surname"
                 android:id="@+id/textView3"
                 android:textSize="@dimen/h2"
-                android:layout_weight="2"
+                android:layout_weight="1.5"
                 android:textColor="@color/text" />
 
             <EditText
@@ -79,7 +81,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editText2"
                 android:layout_weight="1"
-                android:textColor="@color/text" />
+                android:textColor="@color/text"
+                android:inputType="text" />
         </LinearLayout>
 
         <LinearLayout
@@ -93,7 +96,7 @@
                 android:text="Age"
                 android:id="@+id/textView4"
                 android:textSize="@dimen/h2"
-                android:layout_weight="2"
+                android:layout_weight="1.5"
                 android:textColor="@color/text" />
 
             <EditText
@@ -101,7 +104,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editText3"
                 android:layout_weight="1"
-                android:textColor="@color/text" />
+                android:textColor="@color/text"
+                android:inputType="text" />
         </LinearLayout>
 
         <LinearLayout
@@ -115,7 +119,7 @@
                 android:text="User"
                 android:id="@+id/textView5"
                 android:textSize="@dimen/h2"
-                android:layout_weight="2"
+                android:layout_weight="1.5"
                 android:textColor="@color/text" />
 
             <EditText
@@ -123,7 +127,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editText4"
                 android:layout_weight="1"
-                android:textColor="@color/text" />
+                android:textColor="@color/text"
+                android:inputType="text" />
         </LinearLayout>
 
         <LinearLayout
@@ -137,7 +142,7 @@
                 android:text="Password"
                 android:id="@+id/textView6"
                 android:textSize="@dimen/h2"
-                android:layout_weight="2"
+                android:layout_weight="1.5"
                 android:textColor="@color/text" />
 
             <EditText
@@ -145,7 +150,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editText5"
                 android:layout_weight="1"
-                android:textColor="@color/text" />
+                android:textColor="@color/text"
+                android:inputType="text" />
         </LinearLayout>
     </LinearLayout>
 
