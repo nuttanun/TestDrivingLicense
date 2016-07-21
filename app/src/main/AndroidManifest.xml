@@ -28,7 +28,8 @@
         <activity android:name=".CoauseActivity" />
         <activity android:name=".LabalActivity" />
         <activity android:name=".IshiharaActivity" />
-        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".TestActivity" />
+        <activity android:name=".DetailCoaurseActivity"></activity>
     </application>
 
 </manifest>
