@@ -29,7 +29,8 @@
         <activity android:name=".LabalActivity" />
         <activity android:name=".IshiharaActivity" />
         <activity android:name=".TestActivity" />
-        <activity android:name=".DetailCoaurseActivity"></activity>
+        <activity android:name=".DetailCoaurseActivity" />
+        <activity android:name=".ConfirmScoreActivity"></activity>
     </application>
 
 </manifest>

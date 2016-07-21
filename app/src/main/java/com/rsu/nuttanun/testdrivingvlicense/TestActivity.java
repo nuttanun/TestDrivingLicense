@@ -2,6 +2,7 @@ package com.rsu.nuttanun.testdrivingvlicense;
 
 import android.content.Context;
 import android.os.AsyncTask;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -164,10 +165,27 @@ public class TestActivity extends AppCompatActivity {
         choice4RadioButton.setText(choice4Strings[indexInt]);
 
 
+
+
     }   // show text
 
 
     public void clickAAnswer(View view) {
+
+        //check choose
+        if (choiceRadioButton.isChecked()) {
+
+        } else {
+            //  No chooes
+
+            MyAlert myAlert = new MyAlert();
+            myAlert.myDialog(this, "ยังไม่ได้เลือกคำตอบ",
+                    "โปรดเลือกคำตอบ ด้วยคะ");
+
+        }   // if
+
+
+
 
     }   //click Answer
 
