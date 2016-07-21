@@ -16,79 +16,86 @@
         android:text="Answer"
         android:id="@+id/button6"
         android:layout_alignParentBottom="true"
-        android:onClick="clickAAnswer" />
+        android:onClick="clickAnswer" />
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/button6"
-        android:padding="15dp"
-        android:background="#82000000">
+        android:id="@+id/scrollView2"
+        android:layout_above="@+id/button6">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/test"
-            android:id="@+id/textView17"
-            android:layout_gravity="center_horizontal"
-            android:textSize="@dimen/h1"
-            android:textStyle="bold"
-            android:textColor="@color/text" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/button6"
+            android:padding="15dp"
+            android:background="#82000000">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView18"
-            android:textSize="@dimen/h2"
-            android:textColor="@color/text" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView7"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp" />
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/ragChoice">
-
-            <RadioButton
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/radioButton"
-                android:textColor="@color/text"
-                android:textSize="@dimen/h2" />
+                android:text="@string/test"
+                android:id="@+id/textView17"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/h1"
+                android:textStyle="bold"
+                android:textColor="@color/text" />
 
-            <RadioButton
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/radioButton2"
-                android:textColor="@color/text"
-                android:textSize="@dimen/h2" />
+                android:text="New Text"
+                android:id="@+id/textView18"
+                android:textSize="@dimen/h2"
+                android:textColor="@color/text" />
 
-            <RadioButton
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/radioButton3"
-                android:textColor="@color/text"
-                android:textSize="@dimen/h2" />
+                android:id="@+id/imageView7"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp" />
 
-            <RadioButton
+            <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/radioButton4"
-                android:textColor="@color/text"
-                android:textSize="@dimen/h2" />
-        </RadioGroup>
-    </LinearLayout>
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/ragChoice">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/radioButton"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/h2" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/radioButton2"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/h2" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/radioButton3"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/h2" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/radioButton4"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/h2" />
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

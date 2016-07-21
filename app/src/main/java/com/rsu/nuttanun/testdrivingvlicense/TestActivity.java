@@ -2,9 +2,8 @@ package com.rsu.nuttanun.testdrivingvlicense;
 
 import android.content.Context;
 import android.os.AsyncTask;
-
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -28,12 +27,13 @@ public class TestActivity extends AppCompatActivity {
     private TextView textView;
     private ImageView imageView;
     private RadioGroup radioGroup;
-    private RadioButton choiceRadioButton, choice2RadioButton,
+    private RadioButton choice1RadioButton, choice2RadioButton,
             choice3RadioButton, choice4RadioButton;
-    private String[] questionStrings, imageStrings, choice1Strings, choice2Strings,
-            choice3Strings, choice4Strings, answerStrings;
-    private int[] indexInts = new int[4];   // จำนวนข้อที่ต้องการให้ทดสอบ เปลี่ยนเป็น 50
-    private int timeAnInt = 1;
+    private String[] questionStrings, imageStrings, choice1Strings,
+            choice2Strings, choice3Strings, choice4Strings, answerStrings;
+    private int[] indexInts = new int[4];   // จำนวนข้อที่ต้องการให้ทดสอบ เปลี่ยน 4 ==> 50
+    private int timesAnInt = 1;
+    private int myTimes = 0;
 
 
     @Override
@@ -41,12 +41,11 @@ public class TestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        //Bind widget
-
+        //Bind Widget
         textView = (TextView) findViewById(R.id.textView18);
         imageView = (ImageView) findViewById(R.id.imageView7);
         radioGroup = (RadioGroup) findViewById(R.id.ragChoice);
-        choiceRadioButton = (RadioButton) findViewById(R.id.radioButton);
+        choice1RadioButton = (RadioButton) findViewById(R.id.radioButton);
         choice2RadioButton = (RadioButton) findViewById(R.id.radioButton2);
         choice3RadioButton = (RadioButton) findViewById(R.id.radioButton3);
         choice4RadioButton = (RadioButton) findViewById(R.id.radioButton4);
@@ -55,11 +54,9 @@ public class TestActivity extends AppCompatActivity {
         synQuestion.execute();
 
 
-    }   // main method
-
+    }   // Main Method
 
     private class SynQuestion extends AsyncTask<Void, Void, String> {
-
 
         //Explicit
         private Context context;
@@ -71,7 +68,7 @@ public class TestActivity extends AppCompatActivity {
         }
 
         @Override
-        protected String doInBackground(Void... params) {
+        protected String doInBackground(Void... voids) {
 
             try {
 
@@ -81,18 +78,17 @@ public class TestActivity extends AppCompatActivity {
                 Response response = okHttpClient.newCall(request).execute();
                 return response.body().string();
 
-
             } catch (Exception e) {
                 return null;
             }
 
-        }// DoInback
+        }   // doInBack
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
-            Log.d("21JulyV4", "JSON ==>" + s);
+            Log.d("21JulyV4", "JSON ==> " + s);
 
             try {
 
@@ -107,6 +103,7 @@ public class TestActivity extends AppCompatActivity {
                 answerStrings = new String[jsonArray.length()];
 
                 for (int i = 0; i < jsonArray.length(); i += 1) {
+
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
 
                     questionStrings[i] = jsonObject.getString("Question");
@@ -116,7 +113,8 @@ public class TestActivity extends AppCompatActivity {
                     choice3Strings[i] = jsonObject.getString("Choice3");
                     choice4Strings[i] = jsonObject.getString("Choice4");
                     answerStrings[i] = jsonObject.getString("Answer");
-                } // for
+
+                }   // for
 
 
                 for (int i = 0; i < indexInts.length; i += 1) {
@@ -125,28 +123,27 @@ public class TestActivity extends AppCompatActivity {
                     indexInts[i] = random.nextInt(questionStrings.length) + 1;
                     Log.d("21JulyV5", "index(" + i + ") = " + indexInts[i]);
 
+                }   // for
 
-                }   //for
-
-                // show times 1
-                showtext(indexInts[0]);
-
+                //Show Times 1
+                showText(indexInts[0]);
 
             } catch (Exception e) {
                 e.printStackTrace();
-
             }
 
-        } // onpost
-    }   //Synquestion class
+        }   // onPost
 
-    private void showtext(int indexInt) {
+    }   // SynQuestion Class
 
-        textView.setText(Integer.toString(timeAnInt) + ". " + questionStrings[indexInt]);
+    private void showText(int indexInt) {
+
+        textView.setText(Integer.toString(myTimes+=1) + ". " + questionStrings[indexInt]);
 
         if (imageStrings[indexInt].length() != 0) {
 
             try {
+
                 Picasso.with(this)
                         .load(imageStrings[indexInt])
                         .resize(400, 300)
@@ -154,44 +151,39 @@ public class TestActivity extends AppCompatActivity {
 
             } catch (Exception e) {
                 e.printStackTrace();
-
             }
 
         }   // if
 
-        choiceRadioButton.setText(choice1Strings[indexInt]);
+        choice1RadioButton.setText(choice1Strings[indexInt]);
         choice2RadioButton.setText(choice2Strings[indexInt]);
         choice3RadioButton.setText(choice3Strings[indexInt]);
         choice4RadioButton.setText(choice4Strings[indexInt]);
 
 
+    }   // showText
 
 
-    }   // show text
+    public void clickAnswer(View view) {
 
-
-    public void clickAAnswer(View view) {
-
-        //check choose
-        if (choiceRadioButton.isChecked() || choice2RadioButton.isChecked() ||
-                choice3RadioButton.isChecked() || choice4RadioButton.isChecked()) {
-
-            // have chooes
-
-
-        } else {
-            //  No chooes
-
+        //Check Choose
+        if (!(choice1RadioButton.isChecked() || choice2RadioButton.isChecked() ||
+                choice3RadioButton.isChecked() || choice4RadioButton.isChecked())) {
+            //No Choose
             MyAlert myAlert = new MyAlert();
             myAlert.myDialog(this, "ยังไม่ได้เลือกคำตอบ",
                     "โปรดเลือกคำตอบ ด้วยคะ");
 
+        } else if (timesAnInt <= indexInts.length) {
+
+            showText(timesAnInt);
+            timesAnInt += 1;
+
+        } else {
+
         }   // if
 
 
+    }   // clickAnswer
 
-
-    }   //click Answer
-
-
-} // main class
+}   // Main Class
