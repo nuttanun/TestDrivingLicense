@@ -173,7 +173,11 @@ public class TestActivity extends AppCompatActivity {
     public void clickAAnswer(View view) {
 
         //check choose
-        if (choiceRadioButton.isChecked()) {
+        if (choiceRadioButton.isChecked() || choice2RadioButton.isChecked() ||
+                choice3RadioButton.isChecked() || choice4RadioButton.isChecked()) {
+
+            // have chooes
+
 
         } else {
             //  No chooes
