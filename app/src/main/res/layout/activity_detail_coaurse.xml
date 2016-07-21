@@ -7,6 +7,52 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.rsu.nuttanun.testdrivingvlicense.DetailCoaurseActivity">
+    tools:context="com.rsu.nuttanun.testdrivingvlicense.DetailCoaurseActivity"
+    android:background="@drawable/bg27">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/button5"
+        android:layout_alignParentBottom="true"
+        android:onClick="clickBackDetailCoaurse" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView15"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/h1"
+        android:textStyle="bold"
+        android:textColor="@color/text" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView6"
+        android:layout_below="@+id/textView15"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/imageView6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_above="@+id/button5"
+        android:padding="15dp"
+        android:background="#82000000">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textView16"
+            android:textSize="@dimen/h2"
+            android:textColor="@color/text" />
+    </ScrollView>
 </RelativeLayout>
