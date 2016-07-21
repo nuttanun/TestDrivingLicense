@@ -1,6 +1,7 @@
 package com.rsu.nuttanun.testdrivingvlicense;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -174,12 +175,16 @@ public class TestActivity extends AppCompatActivity {
             myAlert.myDialog(this, "ยังไม่ได้เลือกคำตอบ",
                     "โปรดเลือกคำตอบ ด้วยคะ");
 
-        } else if (timesAnInt <= indexInts.length) {
+        } else if (timesAnInt < indexInts.length) {
 
             showText(timesAnInt);
             timesAnInt += 1;
+            radioGroup.clearCheck();
 
         } else {
+
+            Intent intent = new Intent(TestActivity.this, ConfirmScoreActivity.class);
+            startActivity(intent);
 
         }   // if
 
