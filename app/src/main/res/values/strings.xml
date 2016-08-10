@@ -3,5 +3,9 @@
     <string name="signup">Sign Up</string>
 
     <string name="test">แบบทดสอบ</string>
+    <string name="b1">เนื้อหา</string>
+    <string name="b2">ข่าวสาร</string>
+    <string name="b3">ป้ายจราจร</string>
+    <string name="b4">แบบทดสอบ</string>
 
 </resources>
