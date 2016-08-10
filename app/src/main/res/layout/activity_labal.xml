@@ -7,6 +7,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.rsu.nuttanun.testdrivingvlicense.LabalActivity">
+    tools:context="com.rsu.nuttanun.testdrivingvlicense.LabalActivity"
+    android:background="@drawable/bg27">
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView3" />
 </RelativeLayout>
