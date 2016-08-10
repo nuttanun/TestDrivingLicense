@@ -217,6 +217,7 @@ public class TestActivity extends AppCompatActivity {
             Toast.makeText(this, "เฉลยข้อที่ถูก คือ ข้อ " + answerStrings[myIndex],
                     Toast.LENGTH_LONG).show();
 
+
             myIndex += 1;
             Log.d("21julyV5", "score ==>" + scoreAnInt);
 
