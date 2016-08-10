@@ -7,6 +7,56 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.rsu.nuttanun.testdrivingvlicense.ConfirmScoreActivity">
+    tools:context="com.rsu.nuttanun.testdrivingvlicense.ConfirmScoreActivity"
+    android:background="@drawable/bg27">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:id="@+id/button7"
+        android:layout_alignParentBottom="true"
+        android:onClick="clickOKConfirm" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/icon"
+            android:layout_height="@dimen/icon"
+            android:id="@+id/imageView8"
+            android:src="@drawable/prayer" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textView19"
+            android:textSize="@dimen/h2"
+            android:textStyle="bold"
+            android:textColor="@color/text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textView20"
+            android:textSize="@dimen/h2"
+            android:textStyle="italic"
+            android:textColor="@color/text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textView21"
+            android:textSize="@dimen/h1"
+            android:textStyle="bold"
+            android:textColor="@color/text" />
+    </LinearLayout>
 </RelativeLayout>

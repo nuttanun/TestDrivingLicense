@@ -229,7 +229,13 @@ public class TestActivity extends AppCompatActivity {
         } else {
 
             Intent intent = new Intent(TestActivity.this, ConfirmScoreActivity.class);
+
+            intent.putExtra("login", getIntent().getStringArrayExtra("login"));
+            intent.putExtra("Score", (Integer.toString(scoreAnInt)) + "/" +
+                    (Integer.toString(userChooseTimesAnInt)));
+
             startActivity(intent);
+            finish();
 
         }   // if
 

@@ -106,7 +106,7 @@ public class ServiceActivity extends AppCompatActivity implements View.OnClickLi
     private void intentToTest(int intTimes) {
 
         Intent intent = new Intent(ServiceActivity.this, TestActivity.class);
-        intent.putExtra("Login", loginStrings);
+        intent.putExtra("login", loginStrings);
         intent.putExtra("Times", intTimes);
         startActivity(intent);
         finish();
