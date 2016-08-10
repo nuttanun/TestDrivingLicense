@@ -16,6 +16,9 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.IOException;
 
 import static com.rsu.nuttanun.testdrivingvlicense.R.id.textView22;
@@ -72,6 +75,33 @@ public class ScoreListView extends AppCompatActivity {
 
                 String strResponse = response.body().string();
                 Log.d("10AugV2", "strResponse ==>" + strResponse);
+
+                try {
+
+                    JSONArray jsonArray = new JSONArray(strResponse);
+
+                    String[] dateStrings = new String[jsonArray.length()];
+                    String[] scoreStrings = new String[jsonArray.length()];
+
+                    for (int i=0;i<jsonArray.length();i++) {
+
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                        dateStrings[i] = jsonObject.getString("Date");
+                        scoreStrings[i] = jsonObject.getString("Score") + " คะแนน";
+
+
+
+                    }   //for
+
+                    CoaurseAdapter coaurseAdapter = new CoaurseAdapter(ScoreListView.this, 1,
+                            dateStrings, scoreStrings);
+                    listView.setAdapter(coaurseAdapter);
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
 
 
 

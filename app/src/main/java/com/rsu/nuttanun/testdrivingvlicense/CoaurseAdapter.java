@@ -14,12 +14,12 @@ public class CoaurseAdapter extends BaseAdapter{
 
     //Explicit
     private Context context;
+    private int navigateAnInt;
     private String[] titleStrings, detailStrings;
 
-    public CoaurseAdapter(Context context,
-                          String[] titleStrings,
-                          String[] detailStrings) {
+    public CoaurseAdapter(Context context, int navigateAnInt, String[] titleStrings, String[] detailStrings) {
         this.context = context;
+        this.navigateAnInt = navigateAnInt;
         this.titleStrings = titleStrings;
         this.detailStrings = detailStrings;
     }
@@ -50,8 +50,20 @@ public class CoaurseAdapter extends BaseAdapter{
         TextView detailTextView = (TextView) view.findViewById(R.id.textView14);
 
         titleTextView.setText(titleStrings[position]);
-        String shortdetail = detailStrings[position].substring(0, 20) + "...";
-        detailTextView.setText(shortdetail);
+
+
+        switch (navigateAnInt) {
+            case 0:
+                String shortdetail = detailStrings[position].substring(0, 20) + "...";
+                detailTextView.setText(shortdetail);
+                break;
+            case 1:
+                detailTextView.setText(detailStrings[position]);
+                break;
+        }
+
+
+
 
 
 

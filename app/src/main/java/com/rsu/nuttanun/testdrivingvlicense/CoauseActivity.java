@@ -93,7 +93,7 @@ public class CoauseActivity extends AppCompatActivity {
 
                 }   //For
 
-                CoaurseAdapter coaurseAdapter = new CoaurseAdapter(context,
+                CoaurseAdapter coaurseAdapter = new CoaurseAdapter(context, 0,
                         titleStrings, detailStrings);
                 coaurseListView.setAdapter(coaurseAdapter);
 
