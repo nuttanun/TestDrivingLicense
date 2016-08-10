@@ -52,7 +52,7 @@ public class ConfirmScoreActivity extends AppCompatActivity {
         dateString = dateFormat.format(calendar.getTime());
 
         // Show View
-        nameTextView.setText(loginStrings[1] + " " + loginStrings[2]);
+        nameTextView.setText(loginStrings[1]);
         scoreTextView.setText("คะแนนของคุณ = " + scoreString);
         dateTextView.setText(dateString);
 

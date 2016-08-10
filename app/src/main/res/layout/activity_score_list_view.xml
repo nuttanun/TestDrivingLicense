@@ -7,6 +7,49 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.rsu.nuttanun.testdrivingvlicense.ScoreListView">
+    tools:context="com.rsu.nuttanun.testdrivingvlicense.ScoreListView"
+    android:background="@drawable/bg27">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView22"
+        android:textSize="@dimen/h1"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/text" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linBottonListview">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:id="@+id/button8"
+            android:layout_weight="1"
+            android:onClick="clickHome" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exit"
+            android:id="@+id/button9"
+            android:layout_weight="1"
+            android:onClick="clickExit" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView2"
+        android:layout_below="@+id/textView22"
+        android:layout_above="@+id/linBottonListview"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp" />
 </RelativeLayout>
