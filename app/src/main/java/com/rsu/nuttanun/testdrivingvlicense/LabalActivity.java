@@ -11,6 +11,9 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class LabalActivity extends AppCompatActivity {
 
     private ListView listView;
@@ -68,6 +71,30 @@ public class LabalActivity extends AppCompatActivity {
             super.onPostExecute(s);
 
             Log.d("10AugV4", "JSON ==>" + s);
+
+            try {
+
+                JSONArray jsonArray = new JSONArray(s);
+                String[] iconStrings = new String[jsonArray.length()];
+                String[] labelStrings = new String[jsonArray.length()];
+                String[] contentStrings = new String[jsonArray.length()];
+
+                for (int i=0;i<jsonArray.length();i++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    iconStrings[i] = jsonObject.getString("Image");
+                    labelStrings[i] = jsonObject.getString("Label");
+                    contentStrings[i] = jsonObject.getString("Content");
+
+                }   //for
+
+                LabelAdapter labelAdapter = new LabelAdapter(context,
+                        iconStrings, labelStrings, contentStrings);
+                myListView.setAdapter(labelAdapter);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
 
         }   //onPost
     }
