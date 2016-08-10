@@ -32,9 +32,10 @@ public class TestActivity extends AppCompatActivity {
             choice3RadioButton, choice4RadioButton;
     private String[] questionStrings, imageStrings, choice1Strings,
             choice2Strings, choice3Strings, choice4Strings, answerStrings;
-    private int[] indexInts = new int[4];   // จำนวนข้อที่ต้องการให้ทดสอบ เปลี่ยน 4 ==> 50
+    private int[] indexInts;   // จำนวนข้อที่ต้องการให้ทดสอบ เปลี่ยน 4 ==> 50
     private int timesAnInt = 1;
     private int myTimes = 0, scoreAnInt = 0, loginAnInt, myIndex =0;
+    private int userChooseTimesAnInt;
 
 
     @Override
@@ -50,6 +51,13 @@ public class TestActivity extends AppCompatActivity {
         choice2RadioButton = (RadioButton) findViewById(R.id.radioButton2);
         choice3RadioButton = (RadioButton) findViewById(R.id.radioButton3);
         choice4RadioButton = (RadioButton) findViewById(R.id.radioButton4);
+
+        //Receive From Intent
+        userChooseTimesAnInt = getIntent().getIntExtra("Times", 20);
+        Log.d("10AugV1", "Times==>" + userChooseTimesAnInt);
+        indexInts = new int[userChooseTimesAnInt];
+
+
 
         SynQuestion synQuestion = new SynQuestion(this);
         synQuestion.execute();

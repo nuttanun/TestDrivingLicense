@@ -81,7 +81,8 @@ public class ServiceActivity extends AppCompatActivity implements View.OnClickLi
     private void chooseTimes() {
 
         CharSequence[] charSequences = new CharSequence[]{"20 ข้อ", "30 ข้อ", "40 ข้อ", "50 ข้อ"};
-        final int[] intTimes = new int[]{20, 30 ,40 ,50};
+        //final int[] intTimes = new int[]{20, 30 ,40 ,50}; นี่คือต้นฉบับ
+        final int[] intTimes = new int[]{2, 3, 4, 5}; // ตัวลองให้ทำงาน
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
