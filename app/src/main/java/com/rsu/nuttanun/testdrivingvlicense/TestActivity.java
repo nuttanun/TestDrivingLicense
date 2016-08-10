@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -211,6 +212,10 @@ public class TestActivity extends AppCompatActivity {
             if (loginAnInt == Integer.parseInt(answerStrings[myIndex])) {
                 scoreAnInt += 1;
             }   //if
+
+            //show Answer True
+            Toast.makeText(this, "เฉลยข้อที่ถูก คือ ข้อ " + answerStrings[myIndex],
+                    Toast.LENGTH_LONG).show();
 
             myIndex += 1;
             Log.d("21julyV5", "score ==>" + scoreAnInt);
