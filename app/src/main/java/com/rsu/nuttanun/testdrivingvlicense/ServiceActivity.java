@@ -1,5 +1,7 @@
 package com.rsu.nuttanun.testdrivingvlicense;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -66,14 +68,47 @@ public class ServiceActivity extends AppCompatActivity implements View.OnClickLi
                 startActivity(new Intent(ServiceActivity.this, IshiharaActivity.class));
                 break;
             case R.id.imageView5:
-                Intent intent = new Intent(ServiceActivity.this, TestActivity.class);
-                intent.putExtra("Login", loginStrings);
-                startActivity(intent);
-                finish();
+
+                chooseTimes();
+
 
                 break;
 
         }   // swithc
 
     }   //on click
+
+    private void chooseTimes() {
+
+        CharSequence[] charSequences = new CharSequence[]{"20 ข้อ", "30 ข้อ", "40 ข้อ", "50 ข้อ"};
+        final int[] intTimes = new int[]{20, 30 ,40 ,50};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setIcon(R.drawable.nobita48);
+        builder.setTitle("โปรดเลือกจำนวนข้อที่จะทดสอบ");
+        builder.setSingleChoiceItems(charSequences, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                intentToTest(intTimes[which]);
+                dialog.dismiss();
+
+            }   // onClick
+        });
+        builder.show();
+
+
+    }   // choosTimes
+
+
+    private void intentToTest(int intTimes) {
+
+        Intent intent = new Intent(ServiceActivity.this, TestActivity.class);
+        intent.putExtra("Login", loginStrings);
+        intent.putExtra("Times", intTimes);
+        startActivity(intent);
+        finish();
+
+    }
 }   // Main class
