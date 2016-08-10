@@ -30,7 +30,8 @@
         <activity android:name=".IshiharaActivity" />
         <activity android:name=".TestActivity" />
         <activity android:name=".DetailCoaurseActivity" />
-        <activity android:name=".ConfirmScoreActivity"></activity>
+        <activity android:name=".ConfirmScoreActivity" />
+        <activity android:name=".ScoreListView"></activity>
     </application>
 
 </manifest>
