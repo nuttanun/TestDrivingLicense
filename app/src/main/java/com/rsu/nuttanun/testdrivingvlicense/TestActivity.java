@@ -218,6 +218,7 @@ public class TestActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
 
 
+
             myIndex += 1;
             Log.d("21julyV5", "score ==>" + scoreAnInt);
 
